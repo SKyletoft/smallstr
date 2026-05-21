@@ -1,6 +1,6 @@
 [package]
 name = "smallstr"
-version = "0.3.1"
+version = "0.4.0"
 authors = ["Murarth <murarth@gmail.com>"]
 edition = "2018"
 
@@ -16,6 +16,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 
 [features]
+default = ["union", "deref_pure_trait"]
 ffi = []
 std = ["serde/std"]
 union = ["smallvec/union"]
@@ -24,7 +25,7 @@ deref_patterns = ["deref_pure_trait"]
 
 [dependencies]
 serde = { version = "1.0", default-features = false, features = ["alloc"], optional = true }
-smallvec = { version = "1.1" }
+smallvec = { version = "1.15" }
 
 [dev-dependencies]
 bincode = "1.0"
