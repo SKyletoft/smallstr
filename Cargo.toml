@@ -19,6 +19,8 @@ readme = "README.md"
 ffi = []
 std = ["serde/std"]
 union = ["smallvec/union"]
+deref_pure_trait = []
+deref_patterns = ["deref_pure_trait"]
 
 [dependencies]
 serde = { version = "1.0", default-features = false, features = ["alloc"], optional = true }

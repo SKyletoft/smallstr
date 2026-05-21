@@ -495,6 +495,9 @@ impl<A: Array<Item = u8>> ops::DerefMut for SmallString<A> {
     }
 }
 
+#[cfg(feature = "deref_pure_trait")]
+unsafe impl<A: Array<Item = u8>> ops::DerefPure for SmallString<A> {}
+
 impl<A: Array<Item = u8>> AsRef<str> for SmallString<A> {
     #[inline]
     fn as_ref(&self) -> &str {

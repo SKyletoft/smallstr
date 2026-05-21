@@ -30,8 +30,19 @@
 //!
 //! This feature will enable the `union` feature in `smallvec`, which reduces the size of
 //! a `SmallString` instance. This feature requires Rust 1.49 or newer.
+//!
+//! ## `deref_pure_trait` feature
+//!
+//! When enabled, `SmallString` implements `core::ops::DerefPure`. This is enabled by default.
+//! Disable it if your toolchain does not support `DerefPure`.
+//!
+//! ## `deref_patterns` feature
+//!
+//! Implies `deref_pure_trait`. Provided for convenience when consuming crates enable
+//! `#![feature(deref_patterns)]`.
 
 #![cfg_attr(not(any(feature = "ffi", feature = "std")), no_std)]
+#![cfg_attr(feature = "deref_pure_trait", feature(deref_pure_trait))]
 #![deny(missing_docs)]
 
 extern crate alloc;
